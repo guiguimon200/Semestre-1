@@ -1,0 +1,47 @@
+body{
+    font-family: arial;
+    background-color: #002944;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+.card{
+    background-color: rgb(0, 59, 66);
+    text-align: center;
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+.titulo{
+    background-color: rgb(30, 124, 119);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #ffffff;
+    font-weight: bold;
+}
+
+p{
+    font-weight: bold;
+    color: #ffffff;
+}
+
+button{
+    font-weight: bold;
+    font-family: arial;
+    border-style: solid;
+    border-color: black;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+.inputs{
+    border-style: solid;
+    border-color: black;
+    border-radius: 4px;
+    text-align: center;
+}
