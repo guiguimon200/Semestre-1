@@ -59,3 +59,9 @@ button:hover{
     cursor: pointer;
 }
 
+.resultado{
+    margin-left: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+

@@ -24,6 +24,7 @@
         Simule agora
     </button>
     </div>
+    <div id="div_resultado" class="resultado"></div>
 </body>
 </html>
 <script>
@@ -40,12 +41,19 @@
         var precoTotal = totalAlface * precoAlface
         var totalPerda = perda * precoAlface
 
-        var perdaAno = totalPerda * 12
+        var perdaComAF = perda * 0.60
+        var novaQtdAlface = qtdAlface - perdaComAF
+        var lucroFinal = novaQtdAlface * precoAlface
+        var lucroAno = lucroFinal * 12
+        var lucroAnoAntigo = precoTotal * 12
 
-        alert(`
-        Você faz R$${precoTotal} por mês, porém você deixa de ganhar R$${totalPerda}
-        
-        E no ano você deixa de ganhar R$${perdaAno}
-        `)
+        div_resultado.innerHTML = `
+        Sem a <b>Alfa Folium</b> você perde <b style="color: red;">${perda}</b>Kg de alfaces por mês, 
+        e perde <b style="color: red;">R$${totalPerda}</b> por mês. 
+        <br> 
+        Com a <b>Alfa Folium</b> nós reduzimos em <b>60%</b> a sua perda, 
+        aumentando seu lucro mensal de <b style="color: red;">R$${precoTotal}</b> para <b style="color: green;">R$${lucroFinal}</b>,
+        e seu lucro anual de <b style="color: red;">R$${lucroAnoAntigo}</b> para <b style="color: green;">R$${lucroAno}</b>.  
+        `
     }
 </script>
