@@ -27,6 +27,7 @@ body{
 p{
     font-weight: bold;
     color: #ffffff;
+    font-size: 16px;
 }
 
 button{
@@ -37,6 +38,7 @@ button{
     border-radius: 4px;
     margin-bottom: 10px;
     background-color: #ffffff;
+    font-size: 13px;
 }
 
 .inputs{
