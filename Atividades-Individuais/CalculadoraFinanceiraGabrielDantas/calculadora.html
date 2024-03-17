@@ -45,9 +45,9 @@
 
         var valorBruto = AmountValue
 
-        var verao = valorBruto - (valorBruto * 0.6)
+        var rendaVerao = valorBruto - (valorBruto * 0.6)
 
-        var perda = valorBruto - verao
+        var perda = valorBruto - rendaVerao
 
         resultado.innerHTML = `
         
@@ -63,7 +63,7 @@
             <div class="line">
             <p>${hec} hectares</p>
             <p>R$${lettuceValue}</p>
-            <p style="color: #FF3636; font-weight: bold">R$${verao}</p>
+            <p style="color: #FF3636; font-weight: bold">R$${rendaVerao}</p>
             
             </div>
             </tbody>
@@ -84,8 +84,8 @@
         </div>
             <br>
         <div class='titleDiv'>
-            <p class="title"> Os seus ${hec} hectares de plantação de alface, podem lhe trazer uma renda bruta de R$${AmountValue},
-             porém, sem a devida proteção, esse valor no verão pode diminuir em até 60%, chegando em ${verao}.</p>
+            <p class="title"> Partindo da premissa de que em 1 hectar podemos ter até 40 toneladas de alface, os seus ${hec} hectares de plantação de alface, podem lhe trazer uma renda bruta de R$${AmountValue},
+             porém, sem o devido cuidado, esse valor no verão pode diminuir em até 60%, chegando em ${rendaVerao}.</p>
         </div>
         `
 
