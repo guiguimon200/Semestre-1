@@ -54,6 +54,29 @@ UPDATE Estufa SET localidade = 'Fazenda São José' WHERE idEstufa = 2;
 -- removendo uma estufa
 DELETE FROM Estufa WHERE idEstufa = 2;
 
+-- adicionando o campo "situação da estufa", após a escolha do grupo
+ALTER TABLE Estufa ADD COLUMN situacaoSensor VARCHAR(12);
+
+-- adicionando um check para a situação
+ALTER TABLE Estufa ADD CONSTRAINT chksitucaoSensor check (situacaoSensor in('funcionando', 'quebrado'));
+
+-- atualizando a situação dos sensores 
+UPDATE Estufa SET situacaoSensor = 'funcionando' WHERE idEstufa in(1,3, 4);
+
+-- verificando o nome, responsável, a temperatura atual, a umidade atual, a quantidade de unidades de alface, tipo de alface, a localidade e a situaçâo do sensor
+SELECT nome, responsavel, temperaturaAtual, umidadeAtual, qtdUnidadeDeAlface, tipoAlface, localidade, situacaoSensor FROM Estufa;
+
+-- adicionando novos dados
+INSERT INTO Estufa VALUES 
+(default, 'safra-um', 'Maria', 21, 70, 400, 'americana', 'Fazenda dos Silva', 'quebrado');
+
+-- exibindo os dados da das estufas cujo sensor esta quebrados
+SELECT * FROM Estufa WHERE situacaoSensor = 'quebrado';
+
+-- exibindo os dados das estufas cujo sensor está funcionando
+SELECT * FROM Estufa WHERE situacaoSensor = 'funcionando';
+
+
 -- criando a tabela usuário
 CREATE TABLE Usuario (
 idUsuario int primary key auto_increment,
