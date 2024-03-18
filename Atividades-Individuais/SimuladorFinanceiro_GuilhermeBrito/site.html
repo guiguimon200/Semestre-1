@@ -23,10 +23,10 @@
         <input class="input" id="input_valorAlface"> <br>
         Informe de 0 a 100 o custo de plantar 1 semente:
         <input class="input" id="input_custoSemente"> <br>
-        Informe a area total do seu local de produção em metros quadrados:
+        Informe a area total do seu local de produção em metros quadrados (M²):
         <input class="input" id="input_area"> <br>
-        Informe o numero do mês da sua plantação de agora (1 á 12):
-        <input class="input" type="number" max="12" min="1" id="input_numMes"> <br>
+        Informe a estação de de agora (Verão, Outono, Inverno, Primavera):
+        <input class="input" id="input_mes"> <br>
         <button onclick="calcularAlface()">Calcular</button>
         
     </div>
@@ -48,54 +48,46 @@
         var valor = Number(input_valorAlface.value)
         var custo = Number(input_custoSemente.value) / 100
         var area = Number(input_area.value) 
-        var mes = Number(input_numMes.value)
+        var mes = (input_mes.value)
 
         var lucro = valor - (valor * custo)
         var areaPlantacao = area * 0.8
         var lucroarea = (lucro * areaPlantacao).toFixed(2)
 
         exibir.innerHTML = `Voçê vende seu Alface á R$${valor} <br> 
-        tem um custo de ${input_custoSemente.value}% <br> e sua area total é de ${area}m^2 <br> <br>
-        O preço do alface sem o custo fica R$${lucro} <br> voce tem ${areaPlantacao}m^2 de area cultivavel <br> e seu lucro final é de R$${lucroarea} <br> <br>`
+        tem um custo de ${input_custoSemente.value}% <br> e sua area total é de ${area}M² <br> <br>
+        O preço do alface sem o custo fica R$${lucro} <br> voce tem ${areaPlantacao}M² de area cultivavel <br> e seu lucro final é de R$${lucroarea} <br> <br>`
 
-        if (mes <= 2) {
-            if (mes = 12) {
+        if (mes == 'Verão') {
                 var desconto = lucroarea - (lucroarea * 0.6)
                 var resto = lucroarea - desconto
                 exibir.innerHTML += `Por você estar no mês ${mes} você pode chegar a perder 60% da sua plantação <br>
                 Você está ganhando apenas R$${desconto} nesse mês <br> 
                 Com o nosso projeto você deixará de perder ${resto}`
-            }
         }
 
-        if (mes >= 3) {
-            if (mes <=5) {
+        if (mes == 'Primavera') {
                 var desconto = lucroarea - (lucroarea * 0.1)
                 var resto = lucroarea - desconto
                 exibir.innerHTML += `Por você estar no mês ${mes} você pode chegar a perder 60% da sua plantação <br>
                 Você está ganhando apenas R$${desconto} nesse mês <br> 
                 Com o nosso projeto você deixará de perder ${resto}`
-            }
         }
 
-        if (mes >= 6) {
-            if (mes <=8) {
+        if (mes == 'Outono') {
                 var desconto = lucroarea - (lucroarea * 0.2)
                 var resto = lucroarea - desconto
                 exibir.innerHTML += `Por você estar no mês ${mes} você pode chegar a perder 60% da sua plantação <br>
                 Você está ganhando apenas R$${desconto} nesse mês <br> 
                 Com o nosso projeto você deixará de perder ${resto}`
-            }
         }
 
-        if (mes >= 9) {
-            if (mes <= 11) {
-                var desconto = lucroarea - (lucroarea * 0.6)
+        if (mes == 'Inverno') {
+                var desconto = lucroarea - (lucroarea * 0.4)
                 var resto = lucroarea - desconto
                 exibir.innerHTML += `Por você estar no mês ${mes} você pode chegar a perder 60% da sua plantação <br>
                 Você está ganhando apenas R$${desconto} nesse mês <br> 
                 Com o nosso projeto você deixará de perder ${resto}`
-            }
         }
     }
 </script>
