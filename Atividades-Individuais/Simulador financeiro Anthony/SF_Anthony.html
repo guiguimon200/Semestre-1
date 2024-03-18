@@ -28,9 +28,9 @@
 </body>
 </html>
 <script>
-    function calcPerda(){
+    function calcPerda(){ 
         var estufa = Number(input_estufa.value)
-        var alface = Number(input_alface.value)
+        var alface = Number(input_alface.value)           
         var perdaAlface = Number(input_perdaAlface.value)
         var precoAlface = Number(input_precoAlface.value)
 
@@ -48,12 +48,12 @@
         var lucroAnoAntigo = precoTotal * 12
 
         div_resultado.innerHTML = `
-        Sem a <b>Alfa Folium</b> você perde <b style="color: red;">${perda}</b>Kg de alface por mês, 
+        <div class="resultado">Sem a <b>Alfa Folium</b> você perde <b style="color: red;">${perda}</b>Kg de alface por mês, 
         e perde <b style="color: red;">R$${totalPerda}</b> por mês. 
         <br> 
         Com a <b>Alfa Folium</b> nós reduzimos em atè <b>60%</b> a sua perda, 
         aumentando seu lucro mensal de <b style="color: red;">R$${precoTotal}</b> para <b style="color: green;">R$${lucroFinal}</b>,
-        e seu lucro anual de <b style="color: red;">R$${lucroAnoAntigo}</b> para <b style="color: green;">R$${lucroAno}</b>.  
+        e seu lucro anual de <b style="color: red;">R$${lucroAnoAntigo}</b> para <b style="color: green;">R$${lucroAno}</b>.</div>
         `
     }
 </script>
