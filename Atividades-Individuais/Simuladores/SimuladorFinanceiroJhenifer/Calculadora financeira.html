@@ -23,16 +23,16 @@
         </div>
 
         <div class="perguntas">
-            <h2>Quantos kilos de alface produzido no mês passado?</h2>
+            <h2>Quantas unidades de alface foram produzidos no mês passado?</h2>
             <input class="inputs" id="input_producaoAlface"><br>
-            <h2>Quantos kilos perdidos de alface no mês passado?</h2>
+            <h2>Quantas unidades perdidas de alface no mês passado?</h2>
             <p>(Na produção)</p>
             <input class="inputs" id="input_perdasAlface"><br>
-            <h2>Qual o valor do seu Kilo</h2>
-            <input class="inputs" id="input_ganhoKilo"><br>
+            <h2>Qual o valor da sua unidade</h2>
+            <input class="inputs" id="input_ganho"><br>
         </div><br>
 
-        <button onclick="Resultado()">Descobrir</button><br><br>
+        <button onclick="Resultado()">Descobrir</button><br>
 
         <div id="exibir"></div>
     </main>
@@ -44,20 +44,20 @@
     function Resultado() {
         var producaoAlface = input_producaoAlface.value;
         var perdasAlface = input_perdasAlface.value;
-        var ganhoKilo = input_ganhoKilo.value;
+        var ganho = input_ganho.value;
 
-        var perda = producaoAlface - perdasAlface
+        var sobra = producaoAlface - perdasAlface
         var reducaoPerda = perdasAlface * 0.6;
-        var lucroMensalSemPerda = producaoAlface * ganhoKilo;
+        var lucroMensalSemPerda = producaoAlface * ganho;
         var lucroMensal = lucroMensalSemPerda - reducaoPerda;
         var lucroAnual = lucroMensal * 12;
-        var perdaAnual = (perdasAlface * 12 * ganhoKilo);
-        var kiloPerdidoAnual = perdasAlface * 12
+        var perdaAnual = (perdasAlface * 12 * ganho);
+        var PerdidoAnual = perdasAlface * 12
 
-        exibir.innerHTML = `Com a solução Alfa Folium da Áquila Tecnology você tem uma redução de até 60% de sua perda no plantio, 
-        aumentando seu lucro que no  mês passado foi de R$${(perda * ganhoKilo)} para R$${lucroMensal}
-        e seu lucro anual de R$${perdaAnual} para R$${lucroAnual}.
-        Pois sem a Alfa Folium você continuará perdendo ${perdasAlface} Kg de alface por mês, 
-        como já vem perdendo, chegando no final do ano com perda de ${kiloPerdidoAnual}kg e R$${(lucroAnual - perdaAnual)}.`;
+        exibir.innerHTML = `Com a solução <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você tem uma redução de até 60% de sua perda no plantio, 
+        aumentando seu lucro que no  mês passado foi de <strong style="color:red;">R$${(sobra * ganho)}</strong> para <strong style="color:green;">R$${lucroMensal}</strong>
+        e seu lucro anual de <strong style="color:red;">R$${perdaAnual}</strong> para <strong style="color:green;">R$${lucroAnual}</strong>.
+        Pois sem a Alfa Folium você continuará perdendo <strong style="color:red;">${perdasAlface} unidades</strong>  de alface por mês, 
+        como já vem perdendo, chegando no final do ano com perda de <strong style="color:red;">${PerdidoAnual} unidades</strong> e <strong style="color:red;">R$${(lucroAnual - perdaAnual)}</strong>.`;
     }
 </script>
