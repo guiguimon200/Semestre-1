@@ -49,12 +49,9 @@
         let reduzida = total * 0.6;
         let perda = reducao * ganho;
         let agora = total - perda;
-        let anual = (alface * 12 * ganho);
-        let perdasAlfaceAno = alface * 12;
-        let perdaAnual = reducao * 12 * ganho;
 
-        exibir.innerHTML = `Com a solução da <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você terá aproximadamente um aumento de R$${agora} para R$${total}. 
-        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perda} unidades por mês e assim perderá ${perdasAlfaceAno} unidades por ano, chegando num total de perda de R$${perdaAnual} por ano.
+        exibir.innerHTML = `Com a solução <b>ALFA FOLIUM</b> você deixara de perder aproximadamente R$${perda} por mês. 
+        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${reducao} unidades por mês.
         <br>Use a solução da <b>ALFA FOLIUM</b> e reduza as suas perdas!<br><br>`;
 
         btn.innerHTML = `<div id="btn">
