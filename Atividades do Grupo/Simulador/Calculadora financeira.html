@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>Calculadora Financeira - Jhenifer Lorrane</title>
+    <title>Simulador Financeiro</title>
 </head>
 
 <body>
@@ -23,8 +23,6 @@
         </div>
 
         <div class="perguntas">
-            <h2>Quantas unidades de alface foram produzidos no mês passado?</h2>
-            <input class="inputs" id="input_producaoAlface"><br>
             <h2>Quantas unidades perdidas de alface no mês passado?</h2>
             <p>(Na produção)</p>
             <input class="inputs" id="input_perdasAlface"><br>
@@ -42,22 +40,17 @@
 
 <script>
     function Resultado() {
-        var producaoAlface = input_producaoAlface.value;
-        var perdasAlface = input_perdasAlface.value;
-        var ganho = input_ganho.value;
+        var perdasAlface = Number(input_perdasAlface.value);
+        var ganho = Number(input_ganho.value);
 
-        var sobra = producaoAlface - perdasAlface
-        var reducaoPerda = perdasAlface * 0.6;
-        var lucroMensalSemPerda = producaoAlface * ganho;
-        var lucroMensal = lucroMensalSemPerda - reducaoPerda;
-        var lucroAnual = lucroMensal * 12;
+        var perdaAgora = perdasAlface * ganho
+        var reduzida = perdasAlface * 0.6 * ganho;
+        var perdaReduzida = perdaAgora - reduzida
         var perdaAnual = (perdasAlface * 12 * ganho);
-        var PerdidoAnual = perdasAlface * 12
+        var perdasTotal = perdasAlface * ganho;
 
-        exibir.innerHTML = `Com a solução <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você tem uma redução de até 60% de sua perda no plantio, 
-        aumentando seu lucro que no  mês passado foi de <strong style="color:red;">R$${(sobra * ganho)}</strong> para <strong style="color:green;">R$${lucroMensal}</strong>
-        e seu lucro anual de <strong style="color:red;">R$${perdaAnual}</strong> para <strong style="color:green;">R$${lucroAnual}</strong>.
-        Pois sem a Alfa Folium você continuará perdendo <strong style="color:red;">${perdasAlface} unidades</strong>  de alface por mês, 
-        como já vem perdendo, chegando no final do ano com perda de <strong style="color:red;">${PerdidoAnual} unidades</strong> e <strong style="color:red;">R$${(lucroAnual - perdaAnual)}</strong>.`;
+        exibir.innerHTML = `Com a solução da <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você terá uma reduzição de R$${perdasTotal} para R$${perdaReduzida}. 
+        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perdasAlface} unidades e assim perderá R$${perdaAnual} por ano.
+        <br>Use a solução da <b>ALFA FOLIUM</b> e reduza as suas perdas!`;
     }
 </script>
