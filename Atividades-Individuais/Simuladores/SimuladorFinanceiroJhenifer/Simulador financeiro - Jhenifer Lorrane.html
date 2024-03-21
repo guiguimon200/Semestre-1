@@ -19,18 +19,20 @@
             <p class="paragrafo">Está ferramenta foi desenvolvida especialmente para ajudar você a descobrir o quanto
                 realmente está
                 perdendo e a ver o quanto pode ganhar com o projeto <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b>.</p>
+            <p class="paragrafo"><i>Preencha as informações abaixo e logo após clique no botão descobrir!</i></p>
         </div>
 
         <div class="perguntas" id="exibir">
-            <h3>Quantas unidades produzidas de alface no mês passado?</h3>
-            <input class="inputs" id="input_alface"><br>
-            <h3>Digite o valor da sua unidade</h3>
-            <input class="inputs" id="input_ganho"><br>
+            <h2>Quantos kilos de alface produzido no mês passado?</h2>
+            <input class="inputs" id="input_producaoAlface"><br>
+            <h2>Quantos kilos perdidos de alface no mês passado?</h2>
+            <p>(Na produção)</p>
+            <input class="inputs" id="input_perdasAlface"><br>
+            <h2>Qual o valor do seu Kilo</h2>
+            <input class="inputs" id="input_ganhoKilo"><br>
         </div><br>
 
-        <div id="btn">
-            <button onclick="Resultado()">Descobrir</button><br>
-        </div>
+        <button class="btn" onclick="Resultado()">Descobrir</button><br><br>
     </main>
 </body>
 
@@ -38,21 +40,23 @@
 
 <script>
     function Resultado() {
-        let alface = Number(input_alface.value);
-        let ganho = Number(input_ganho.value);
+        var producaoAlface = input_producaoAlface.value;
+        var perdasAlface = input_perdasAlface.value;
+        var ganhoKilo = input_ganhoKilo.value;
 
-        let total = alface * ganho;
-        let reducao = alface * 0.6
-        let reduzida = total * 0.6;
-        let perda = reducao * ganho;
-        let agora = total - perda;
-        let anual = (alface * 12 * ganho);
-        let perdasAlfaceAno = alface * 12;
-        let perdaAnual = alface * 12 * ganho;
+        var perda = producaoAlface - perdasAlface
+        var reducaoPerda = perdasAlface * 0.6;
+        var lucroMensalSemPerda = producaoAlface * ganhoKilo;
+        var lucroMensal = lucroMensalSemPerda - reducaoPerda;
+        var lucroAnual = lucroMensal * 12;
+        var perdaAnual = (perdasAlface * 12 * ganhoKilo);
+        var kiloPerdidoAnual = perdasAlface * 12
 
-        exibir.innerHTML = `Com a solução da <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você terá aproximadamente um aumento de R$${agora} para R$${total}. 
-        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perda} unidades por mês e assim perderá ${perdasAlfaceAno} unidades por ano, chegando num total de perda de R$${perdaAnual} por ano.
-        <br>Use a solução da <b>ALFA FOLIUM</b> e reduza as suas perdas!<br><br>`;
+        exibir.innerHTML = `Com a solução Alfa Folium da Áquila Tecnology você tem uma redução de até 60% de sua perda no plantio, 
+        aumentando seu lucro que no  mês passado foi de R$${(perda * ganhoKilo)} para R$${lucroMensal}
+        e seu lucro anual de R$${perdaAnual} para R$${lucroAnual}.
+        Pois sem a Alfa Folium você continuará perdendo ${perdasAlface} Kg de alface por mês, 
+        como já vem perdendo, chegando no final do ano com perda de ${kiloPerdidoAnual}kg e R$${(lucroAnual - perdaAnual)}.`;
 
         btn.innerHTML = `<div id="btn">
             <button onclick="voltar()">Voltar ao programa</button><br>
