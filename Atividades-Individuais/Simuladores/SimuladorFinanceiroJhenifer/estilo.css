@@ -7,27 +7,27 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #dbfddb;
 }
 
 main {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .titulo {
-    color: #4caf50;
-    font-size: 30px;
+    background-color: #536D32;
+    color: #F2F1EC;
+    text-align: center;
+    padding: 60px;
+    font-size: 60px;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
 .paragrafo {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
@@ -38,17 +38,17 @@ main {
     margin-top: 15px;
     border: 1px solid rgb(70, 70, 70);
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 button {
-    padding: 12px 24px;
-    background-color: #4caf50;
+    padding: 15px 24px;
+    background-color: #536D32;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 button:hover {
@@ -57,5 +57,5 @@ button:hover {
 
 #exibir {
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 20px;
 }
