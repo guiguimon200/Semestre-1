@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>Simulador Financeiro - Jhenifer Lorrane</title>
+    <title>Simulador Financeiro - Jhenifer </title>
 </head>
 
 <body>
@@ -55,10 +55,14 @@
 
         exibir.innerHTML = `Com a solução da <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você terá uma reduzição de R$${perdasTotal} para R$${perdaReduzida}. 
         Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perdasAlface} unidades por mês e assim perderá ${perdasAlfaceAno} unidades por ano, chegando num total de perda de R$${perdaAnual} por ano.
-        <br>Use a solução da <b>ALFA FOLIUM</b> e reduza as suas perdas!<br>`;
+        <br>Use a solução da <b>ALFA FOLIUM</b> e reduza as suas perdas!<br><br>`;
 
         btn.innerHTML = `<div id="btn">
-            <button onclick="voltar()">voltar ao programa</button><br>
+            <button onclick="voltar()">Voltar ao programa</button><br>
         </div>`
+    }
+
+    function voltar() {
+        location.reload()
     }
 </script>
