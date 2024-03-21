@@ -48,9 +48,10 @@
         var perdaReduzida = perdaAgora - reduzida
         var perdaAnual = (perdasAlface * 12 * ganho);
         var perdasTotal = perdasAlface * ganho;
+        var perdasAlfaceAno = perdasAlface * 12;
 
         exibir.innerHTML = `Com a solução da <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você terá uma reduzição de R$${perdasTotal} para R$${perdaReduzida}. 
-        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perdasAlface} unidades e assim perderá R$${perdaAnual} por ano.
+        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perdasAlface} unidades por mês e assim perderá ${perdasAlfaceAno} unidades por ano, chegando num total de  perda de R$${perdaAnual} por ano.
         <br>Use a solução da <b>ALFA FOLIUM</b> e reduza as suas perdas!`;
     }
 </script>
