@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
-    <title>Simulador Financeiro</title>
+    <title>Simulador Financeiro - Jhenifer Lorrane</title>
 </head>
 
 <body>
@@ -14,8 +14,9 @@
         <div class="conteudoinicial">
             <div class="textos_iniciais">
                 <h1 class="titulo">Simulador Financeiro</h1><br>
-                <p class="paragrafo">Já reparou que as temperaturas elevadas levam você, produtor de alface a
-                    <strong>perdas de até 60% do total da sua plantação</strong>, um dado Scielo Brasil (base de dados de artigos cientificos)<br>
+                <p class="paragrafo">Já reparou que as temperaturas elevadas e a umidade elevada, levam você, produtor de alface a
+                    <strong>perdas de até 60% do total do seu platio?</strong><br>
+                    Um dado Scielo Brasil (base de dados de artigos cientificos) diz que "Temperaturas elevadas associadas a alta pluviosidade levam o produtor de alface a perdas de até 60%, justamente no período de maior demanda de consumo".<br>
                     sendo justamente no período de maior demanda de consumo?</p>
             </div>
         </div>
@@ -25,10 +26,9 @@
             <p class="paragrafo2">Está ferramenta foi desenvolvida especialmente para ajudar você a descobrir o quanto
                 realmente suas perdas por temperatura e umidade lhe afeta e a ver o quanto pode ganhar se ultilizar a solução <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b>.</p>
             <br><br>
-            <h2>Quantas unidades perdidas de alface no mês passado?</h2>
-            <p>(Na produção por temperatura e umidade)</p>
-            <input class="inputs" id="input_perdasAlface"><br>
-            <h2>Qual o valor da sua unidade</h2>
+            <h2>Quantas unidades produzidas de alface no mês passado?</h2>
+            <input class="inputs" id="input_alface"><br>
+            <h2>Digite o valor da sua unidade</h2>
             <input class="inputs" id="input_ganho"><br>
         </div><br>
 
@@ -42,18 +42,20 @@
 
 <script>
     function Resultado() {
-        let perdasAlface = Number(input_perdasAlface.value);
+        let alface = Number(input_alface.value);
         let ganho = Number(input_ganho.value);
 
-        let perdaAgora = perdasAlface * ganho
-        let reduzida = perdasAlface * ganho;
-        let perdaReduzida = perdaAgora - reduzida
-        let perdaAnual = (perdasAlface * 12 * ganho);
-        let perdasTotal = perdasAlface * ganho;
-        let perdasAlfaceAno = perdasAlface * 12;
+        let total = alface * ganho;
+        let reducao = alface * 0.6
+        let reduzida = total * 0.6;
+        let perda = reducao * ganho;
+        let agora = total - perda;
+        let anual = (alface * 12 * ganho);
+        let perdasAlfaceAno = alface * 12;
+        let perdaAnual = alface * 12 * ganho;
 
-        exibir.innerHTML = `Com a solução da <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você terá aproximadamente uma redução de R$${perdasTotal} para R$${perdaReduzida}. 
-        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perdasAlface} unidades por mês e assim perderá ${perdasAlfaceAno} unidades por ano, chegando num total de perda de R$${perdaAnual} por ano.
+        exibir.innerHTML = `Com a solução da <b>ALFA FOLIUM</b> da <i><b>Áquila Tecnology</i></b> você terá aproximadamente um aumento de R$${agora} para R$${total}. 
+        Pois sem a <b>ALFA FOLIUM</b> você continuará perdendo ${perda} unidades por mês e assim perderá ${perdasAlfaceAno} unidades por ano, chegando num total de perda de R$${perdaAnual} por ano.
         <br>Use a solução da <b>ALFA FOLIUM</b> e reduza as suas perdas!<br><br>`;
 
         btn.innerHTML = `<div id="btn">
