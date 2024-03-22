@@ -20,16 +20,11 @@ main {
     color: #4caf50;
     font-size: 30px;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
-<<<<<<< HEAD
 h2{
     font-size: 20px;
-=======
-.paragrafo {
-    font-size: 16px;
-    margin-bottom: 15px;
->>>>>>> f2e987c737fd4bd17ff97fb689fa7a299f400036
 }
 
 .paragrafo {
